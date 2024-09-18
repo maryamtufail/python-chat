@@ -66,7 +66,7 @@ function updateUsername() {
     selectedAvatar = "boy";
   }
 
-  // Send the updated username and selected avatar if changed
+  // Send the updated username and selected avatar 
   if (newUsername && newUsername !== currentUsername) {
     socket.emit("update_username", {
       username: newUsername,
