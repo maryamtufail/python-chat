@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Python Chat App</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"
+            integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <div class="chat-container">
+            <div class="chat-header">Python Chat</div>
+            <div class="username-container">
+                <div class="current-username-wrapper"><span
+                        id="current-username"></span></div>
+                        <!-- change User -->
+                <div class="input-btn-wrapper">
+                    <input type="text" id="username-input"
+                        placeholder="New username" />
+                        <div class="radio-buttons">
+                            <label>
+                                <input type="radio" name="option" value="girl" id="radio1">
+                              Girl
+                            </label>
+                            <label>
+                                <input type="radio" name="option" value="boy" id="radio2">
+                                Boy
+                            </label>
+                        </div>
+
+                    <button id="update-username-button">Update Username</button>
+                </div>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+
+            <!-- Chat -->
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type your message..." />
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
